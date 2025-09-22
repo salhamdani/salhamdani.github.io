@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*******************************************************************************
  * Variables used throughout the theme.
  * To adjust anything, simply edit the variables below and rebuild the theme.
@@ -738,6 +739,39 @@ progress::-moz-progress-bar {
 
 .theorem[text]:before {
   content: "Theorem (" attr(text) ") ";
+}
+
+.corollary {
+  display: block;
+  font-style: italic;
+}
+
+.corollary:before {
+  content: "Corollary. ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+.corollary[text]:before {
+  content: "Corollary (" attr(text) ") ";
+}
+
+.proof {
+  display: block;
+  margin-left: 0px;
+  margin-bottom: 30px;
+  font-style: normal;
+}
+
+.proof:before {
+  content: "Proof.  ";
+  float: left;
+  font-weight: bold;
+}
+
+.proof:after {
+  content: "◼";
+  float: right;
 }
 
 /*******************************************************************************

@@ -10,10 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>code | Summer  Al Hamdani</title>
+    <title>Lee's Intro to Smooth Manifolds, Exercise 9.40 | Summer  Al Hamdani</title>
     <meta name="author" content="Summer  Al Hamdani">
-    <meta name="description" content="Webpage for Summer Al Hamdani.
-">
+    <meta name="description" content="Proof of Corollary 9.39 in Lee's book.">
     <meta name="keywords" content="academic-website, jekyll">
 
 
@@ -34,7 +33,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/blog/tag/code/">
+    <link rel="canonical" href="http://localhost:4000/blog/2024/Lee-soln-Exercise9dot40/">
 
     <!-- Dark Mode -->
     
@@ -118,28 +117,108 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <div class="post">
+      <!-- _layouts/post.html -->
+
+<div class="post">
 
   <header class="post-header">
-    <h1 class="post-title"> <i class="fas fa-hashtag fa-sm"></i> code </h1>
-    <p class="post-description"> an archive of posts with this tag </p>
+    <h1 class="post-title">Lee's Intro to Smooth Manifolds, Exercise 9.40</h1>
+    <p class="post-meta">June 3, 2024</p>
+    <p class="post-tags">
+      <a href="/blog/2024"> <i class="fas fa-calendar fa-sm"></i> 2024 </a>
+        ·  
+        <a href="/blog/tag/math">
+          <i class="fas fa-hashtag fa-sm"></i> math,</a>  
+          <a href="/blog/tag/solutions">
+          <i class="fas fa-hashtag fa-sm"></i> solutions,</a>  
+          <a href="/blog/tag/manifolds">
+          <i class="fas fa-hashtag fa-sm"></i> manifolds</a>  
+          
+        ·  
+        <a href="/blog/category/manifolds">
+          <i class="fas fa-tag fa-sm"></i> manifolds,</a>  
+          <a href="/blog/category/solutions">
+          <i class="fas fa-tag fa-sm"></i> solutions</a>  
+          
+
+    </p>
   </header>
 
-  <article>
-    <div class="table-responsive">
-      <table class="table table-sm table-borderless">
-        
-        <tr>
-          <th scope="row">Jul 15, 2015</th>
-          <td>
-              <a class="post-link" href="/blog/2015/code/">a post with code</a>
-          </td>
-        </tr>
-      
-      </table>
-    </div>
-  </article>
+  <article class="post-content">
+    <p>Exercise 9.40 states to prove Corollary 9.39, which lists a few properties of the Lie derivatives of vector fields with respect to some other vector field:</p>
 
+<div class="corollary" text="9.39">
+
+Suppose \(M\) is a smooth manifold with or without boundary, and \(V,W,X \in \mathfrak{X}(M)\).
+<ol>
+<li>\(\mathcal L _V W = - \mathcal L_W V.\)</li>
+
+<li>\(\mathcal L_V[W,X]=[\mathcal L_VW,X] + [W,\mathcal L_VX]\).</li>
+
+<li>\(\mathcal L_{[V,W]}X = \mathcal L_V \mathcal L_W X - \mathcal L_W \mathcal L_V X\).</li>
+
+<li>If \(g \in C^\infty(M)\), then \(\mathcal L_V(gW)=(Vg)W+g\mathcal L_VW\).</li>
+
+<li>If \(F: M \rightarrow N\) is a diffeomorphism, then \(F_*(\mathcal{L}_VX)=\mathcal L_{F_*V}F_*X\).</li>
+</ol>
+</div>
+
+<p><strong>Note:</strong> Most of these will follow as a consequence of Theorem 9.39 (i.e., \(\mathcal L_V X = [V,X]\)), some algebra, and invoking properties of the Lie bracket (Proposition 8.28 in Lee).</p>
+
+<div class="proof"> 
+<p>We will proceed via lots of symbol-pushing; if one desires to be more rigorous, all of these equalities can be realized by seeing how each operator acts on any arbitrary \( f \in C^\infty(M)\).</p>
+
+<p>For (1), this is a pretty straightforward computation: \(\mathcal L _V W = [V,W]  = VW-WV = - (WV - VW) = -[W,V] = - \mathcal L_W V \).</p>
+
+<p>Proving (2) and (3) will be a little more involved. For (2), observe that:</p>
+<p>
+\begin{align*}
+\mathcal L_V[W,X] 
+&amp;= [V, [W,X]] \\
+&amp;= [V,[W,X]] + [W,[X,V]] + [X, [V,W]] - ([W,[X,V]] + [X, [V,W]]) \\
+&amp;= 0 - [W,[X,V]] - [X, [V,W]] \\
+&amp;= [[V,W],X] - [W,XV-VX] \\
+&amp;= [\mathcal L_V W, X] + [W,VX] - [W,XV] \\
+&amp;= [\mathcal L_V W, X] + [W,VX - XV] \\
+&amp;= [\mathcal L_VW,X] + [W,\mathcal L_VX].
+\end{align*}
+</p>
+
+<p>Similarly, for (3), we see that: </p>
+<p>
+\begin{align*}
+\mathcal L_{[V,W]}X
+&amp;= [[V,W],X] \\
+&amp;= -[X,[V,W]] \\
+&amp;= -[X,[V,W]] - [V,[W,X]] - [W,[X,V]] + [V,[W,X]] + [W,[X,V]] \\
+&amp;= 0 + [V,[W,X]] + [W,-(-[X,V])] \\
+&amp;= [V,[W,X]] - [W,[V,X]] \\ 
+&amp;= [V, L_W X] - [W,L_V X] \\
+&amp;= \mathcal L_V \mathcal L_W X - \mathcal L_W \mathcal L_V X.
+\end{align*}
+</p>
+
+<p>For (4), suppose \(g \in C^\infty(M)\). Let \( f\in C^\infty(M)\) such that \(f \equiv 1 \), i.e. \( f(p) = 1, \forall p \in M\). Note that \(Wf= W(1) = 0\) because vector fields are derivations. Then,</p>
+<p>
+\begin{align*}
+\mathcal L_V(gW)
+&amp;= [V,gW] \\
+&amp;= [fV, gW] \\
+&amp;= fg[V,W] + (fVg)W - (gWf)V \\
+&amp;= g[V,W] + (Vg)W - 0 \quad (\because f \equiv 1) \\
+&amp;= (Vg)W + g[V,W] \\
+&amp;= (Vg)W+g\mathcal L_VW.
+\end{align*}
+</p>
+
+Finally, for (4), suppose \(F: M \rightarrow N\) is a diffeomorphism. By Corollary 8.31 (Pushforwards of Lie Brackets), \(F_*(\mathcal L_VX)=F_*([V,X]) = [F_* V,F_* X] = \mathcal L_{F_*V}F_*X\).
+</div>
+
+<hr>
+
+<p>Please let me know by email if there are any mistakes or typos. I make no promises that the above solution is correct.</p>
+
+  </article>
 </div>
 
     </div>

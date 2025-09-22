@@ -1,5 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-05-29T12:37:20-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle>Webpage for Summer Al Hamdani.
-</subtitle><entry><title type="html">a post with redirect</title><link href="http://localhost:4000/blog/2022/redirect/" rel="alternate" type="text/html" title="a post with redirect" /><published>2022-02-01T11:39:00-06:00</published><updated>2022-02-01T11:39:00-06:00</updated><id>http://localhost:4000/blog/2022/redirect</id><content type="html" xml:base="http://localhost:4000/blog/2022/redirect/"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[you can also redirect to assets like pdf]]></summary></entry><entry><title type="html">a post with github metadata</title><link href="http://localhost:4000/blog/2020/github-metadata/" rel="alternate" type="text/html" title="a post with github metadata" /><published>2020-09-28T16:01:00-05:00</published><updated>2020-09-28T16:01:00-05:00</updated><id>http://localhost:4000/blog/2020/github-metadata</id><content type="html" xml:base="http://localhost:4000/blog/2020/github-metadata/"><![CDATA[<p>A sample blog page that demonstrates the accessing of github meta data.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-09-22T18:46:46-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle>Webpage for Summer Al Hamdani.
+</subtitle><entry><title type="html">Lee’s Intro to Smooth Manifolds, Exercise 9.40</title><link href="http://localhost:4000/blog/2024/Lee-soln-Exercise9dot40/" rel="alternate" type="text/html" title="Lee’s Intro to Smooth Manifolds, Exercise 9.40" /><published>2024-06-03T10:12:00-05:00</published><updated>2024-06-03T10:12:00-05:00</updated><id>http://localhost:4000/blog/2024/Lee-soln-Exercise9dot40</id><content type="html" xml:base="http://localhost:4000/blog/2024/Lee-soln-Exercise9dot40/"><![CDATA[<p>Exercise 9.40 states to prove Corollary 9.39, which lists a few properties of the Lie derivatives of vector fields with respect to some other vector field:</p>
+
+<div class="corollary" text="9.39">
+
+Suppose \(M\) is a smooth manifold with or without boundary, and \(V,W,X \in \mathfrak{X}(M)\).
+<ol>
+<li>\(\mathcal L _V W = - \mathcal L_W V.\)</li>
+
+<li>\(\mathcal L_V[W,X]=[\mathcal L_VW,X] + [W,\mathcal L_VX]\).</li>
+
+<li>\(\mathcal L_{[V,W]}X = \mathcal L_V \mathcal L_W X - \mathcal L_W \mathcal L_V X\).</li>
+
+<li>If \(g \in C^\infty(M)\), then \(\mathcal L_V(gW)=(Vg)W+g\mathcal L_VW\).</li>
+
+<li>If \(F: M \rightarrow N\) is a diffeomorphism, then \(F_*(\mathcal{L}_VX)=\mathcal L_{F_*V}F_*X\).</li>
+</ol>
+</div>
+
+<p><strong>Note:</strong> Most of these will follow as a consequence of Theorem 9.39 (i.e., \(\mathcal L_V X = [V,X]\)), some algebra, and invoking properties of the Lie bracket (Proposition 8.28 in Lee).</p>
+
+<div class="proof"> 
+<p>We will proceed via lots of symbol-pushing; if one desires to be more rigorous, all of these equalities can be realized by seeing how each operator acts on any arbitrary \( f \in C^\infty(M)\).</p>
+
+<p>For (1), this is a pretty straightforward computation: \(\mathcal L _V W = [V,W]  = VW-WV = - (WV - VW) = -[W,V] = - \mathcal L_W V \).</p>
+
+<p>Proving (2) and (3) will be a little more involved. For (2), observe that:</p>
+<p>
+\begin{align*}
+\mathcal L_V[W,X] 
+&amp;= [V, [W,X]] \\
+&amp;= [V,[W,X]] + [W,[X,V]] + [X, [V,W]] - ([W,[X,V]] + [X, [V,W]]) \\
+&amp;= 0 - [W,[X,V]] - [X, [V,W]] \\
+&amp;= [[V,W],X] - [W,XV-VX] \\
+&amp;= [\mathcal L_V W, X] + [W,VX] - [W,XV] \\
+&amp;= [\mathcal L_V W, X] + [W,VX - XV] \\
+&amp;= [\mathcal L_VW,X] + [W,\mathcal L_VX].
+\end{align*}
+</p>
+
+<p>Similarly, for (3), we see that: </p>
+<p>
+\begin{align*}
+\mathcal L_{[V,W]}X
+&amp;= [[V,W],X] \\
+&amp;= -[X,[V,W]] \\
+&amp;= -[X,[V,W]] - [V,[W,X]] - [W,[X,V]] + [V,[W,X]] + [W,[X,V]] \\
+&amp;= 0 + [V,[W,X]] + [W,-(-[X,V])] \\
+&amp;= [V,[W,X]] - [W,[V,X]] \\ 
+&amp;= [V, L_W X] - [W,L_V X] \\
+&amp;= \mathcal L_V \mathcal L_W X - \mathcal L_W \mathcal L_V X.
+\end{align*}
+</p>
+
+<p>For (4), suppose \(g \in C^\infty(M)\). Let \( f\in C^\infty(M)\) such that \(f \equiv 1 \), i.e. \( f(p) = 1, \forall p \in M\). Note that \(Wf= W(1) = 0\) because vector fields are derivations. Then,</p>
+<p>
+\begin{align*}
+\mathcal L_V(gW)
+&amp;= [V,gW] \\
+&amp;= [fV, gW] \\
+&amp;= fg[V,W] + (fVg)W - (gWf)V \\
+&amp;= g[V,W] + (Vg)W - 0 \quad (\because f \equiv 1) \\
+&amp;= (Vg)W + g[V,W] \\
+&amp;= (Vg)W+g\mathcal L_VW.
+\end{align*}
+</p>
+
+Finally, for (4), suppose \(F: M \rightarrow N\) is a diffeomorphism. By Corollary 8.31 (Pushforwards of Lie Brackets), \(F_*(\mathcal L_VX)=F_*([V,X]) = [F_* V,F_* X] = \mathcal L_{F_*V}F_*X\).
+</div>
+
+<hr />
+
+<p>Please let me know by email if there are any mistakes or typos. I make no promises that the above solution is correct.</p>]]></content><author><name></name></author><category term="manifolds," /><category term="solutions" /><category term="math," /><category term="solutions," /><category term="manifolds" /><summary type="html"><![CDATA[Proof of Corollary 9.39 in Lee's book.]]></summary></entry><entry><title type="html">a post with redirect</title><link href="http://localhost:4000/blog/2022/redirect/" rel="alternate" type="text/html" title="a post with redirect" /><published>2022-02-01T11:39:00-06:00</published><updated>2022-02-01T11:39:00-06:00</updated><id>http://localhost:4000/blog/2022/redirect</id><content type="html" xml:base="http://localhost:4000/blog/2022/redirect/"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[you can also redirect to assets like pdf]]></summary></entry><entry><title type="html">a post with github metadata</title><link href="http://localhost:4000/blog/2020/github-metadata/" rel="alternate" type="text/html" title="a post with github metadata" /><published>2020-09-28T16:01:00-05:00</published><updated>2020-09-28T16:01:00-05:00</updated><id>http://localhost:4000/blog/2020/github-metadata</id><content type="html" xml:base="http://localhost:4000/blog/2020/github-metadata/"><![CDATA[<p>A sample blog page that demonstrates the accessing of github meta data.</p>
 
 <h2 id="what-does-github-metadata-do">What does Github-MetaData do?</h2>
 <ul>
