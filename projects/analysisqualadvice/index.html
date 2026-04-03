@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.png">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/projects/analysisqual/">
+    <link rel="canonical" href="http://localhost:4000/projects/analysisqualadvice/">
 
     <!-- Dark Mode -->
     
@@ -123,7 +123,19 @@
           </header>
 
           <article>
-            <p>I passed the complex analysis qualifying exam in August 2023 (and lowkey trivialized it 💁🏻‍♀️). Both the real and complex exams are structured similarly: the first three questions are “basic” undergraduate analysis (MATH 521/522), then three questions come from the first semester of measure theory/real analysis (MATH 721), and the final three questions cover topics in complex analysis (MATH 722) or second semester real analysis (MATH 725). Several people very generously advised/helped me prepare for this exam, so I would like to “give back” by sharing what I believed helped me perform well.</p>
+            <p>First and foremost, I strongly implore you to highly familiarize yourself with the following webpages:</p>
+<ul>
+  <li>
+<a href="https://math.wisc.edu/graduate/current-phd/qualifying-exams/topics/" rel="external nofollow noopener" target="_blank">Guide for Topics for the Qualifying Exams</a> : this outlines all the topics you can expect to see on the qualifying exam. The topics list for the analysis qual is pretty accurate, in my experience.</li>
+  <li>
+<a href="https://math.wisc.edu/graduate/current-phd/qualifying-exams/study-strategies/" rel="external nofollow noopener" target="_blank">Quals Study Strategies</a> : General study recommendations for the qualifying exam.</li>
+  <li>
+<a href="https://www.library.wisc.edu/steenbock/collections/mathematics-practice-exams/" rel="external nofollow noopener" target="_blank">Mathematics Practice Exams</a> : Repository of historical mathematics exams; scroll to the bottom for the past qualifying exams. Maintained by the Steenbock Library.</li>
+</ul>
+
+<p>Everything you (objectively) need to know can be found on those pages. The goal of this webpage is to supplement already existing references for analysis qual preparation with my own suggestions/experiences.</p>
+
+<p>Both the real and complex exams are structured similarly: the first three questions are “basic” undergraduate analysis (MATH 521/522), then three questions come from the first semester of measure theory/real analysis (MATH 721), and the final three questions cover topics in complex analysis (MATH 722) or second semester real analysis (MATH 725). Several people very generously advised/helped me prepare for this exam, so I would like to “give back” by sharing what I believed helped me perform well.</p>
 
 <h2 id="general-advice">General Advice</h2>
 
@@ -141,7 +153,7 @@ for every \(n \in \mathbb{Z}\)?</p>
 
 <p>After a couple of straightforward computations, we see \(T\) is well-defined (i.e., \(Tx_n \in l^\infty(\mathbb R)\)) and is also a contraction map. By the Banach fixed-point theorem, there exists a unique sequence for which \(T x_n = x_n\), proving the result. So, on the flashcard for the Banach fixed-point theorem, I noted that this is a useful for any questions involving the existence of a function or sequence satisfying some kind of a recursion; sometimes it is phrased in an obvious way like this problem was, other times it is not (see exam 8.2020.1).</p>
 
-<p>Obviously, that was not a complete solution, which brings me to my next point: a significant part of the exam is assessing your ability to not only come up with an “idea” for the solution, but to also write a complete, coherent, self-contained proof. I recommmend fully writing out detailed solutions to problems rather than just scribbling notes on the “general idea” riddled with (probably incorrectly used) jargon. It took me maybe a minute to type up the “gist” of how to solve the problem, but if you work out the computation for showing \(T\) is a contraction, then you might notice a small problem: how does one estimate \(0.4 \| \sin x_{n+1} - \sin y_{n+1}\|_\infty\) in a way that introduces \(\| x_{n+1} - y_{n+1} \|_\infty\)? (Hint at the end.)</p>
+<p>Obviously, that was not a complete solution, which brings me to my next point: a significant part of the exam is assessing your ability to not only come up with an “idea” for the solution, but to also write a complete, coherent, self-contained proof. I recommmend fully writing out detailed solutions to problems rather than just scribbling notes on the “general idea” riddled with (probably incorrectly used) jargon. It took me maybe a minute to type up the “gist” of how to solve the problem, but if you work out the computation for showing \(T\) is a contraction, then you might notice a small problem: how does one estimate \(0.4 \| \sin x_{n+1} - \sin y_{n+1}\|_\infty\) in a way that introduces \(\| x_{n+1} - y_{n+1} \|_\infty\)?</p>
 
 <p>For many of the problems, one can find solutions/hints on the World Wide Web. There is also <a href="https://docs.google.com/viewer?url=https://github.com/jdjake/Notes/raw/master/Math/Analysis/2021_SEP.pdf" rel="external nofollow noopener" target="_blank">a lovely document containing several solutions to questions from the real analysis exam written by Max Bacharach and Jacob Denson</a>. Solutions are a helpful reference if you are genuinely stuck, but the worst thing you can do is being in the routine of just solution hunting and attempting to memorize everything rather than affording yourself an opportunity to conjure up ideas on your own. Sometimes questions are repeated; for example, proving the continuity of \(f(r) = m(E \cap (E+r))\) where \(E\subset \mathbb R\) is measurable and \(m(E)&lt;\infty\), showed up a few times and on the August 2023 exam!</p>
 
@@ -153,7 +165,7 @@ for every \(n \in \mathbb{Z}\)?</p>
 
 <p>You can read the aforementioned linked documents about the real analysis qualifying exam. The SEP that happens during the summer also usually covers the real version of the qual. For complex analysis:</p>
 <ul>
-  <li>Know the residue theorem and contour integration! I’m pretty confident that the set of exams that <em>didn’t</em> ask something involving either has measure zero. Read through your favorite undergraduate textbook in complex analysis if you struggle with identifying contours.</li>
+  <li>Know the residue theorem and contour integration! I’m pretty confident that the set of exams that <em>didn’t</em> ask something involving either has (counting) measure zero. Read through your favorite undergraduate textbook in complex analysis if you struggle with identifying contours.</li>
   <li>The exam writers <em>really</em> like to ask questions that use Schwarz’s Lemma or Rouche’s Theorem.
     <ul>
       <li>If you want to use the Schwarz-Pick Lemma, you should rederive it using Schwarz Lemma; if \(f : \mathbb{D} \rightarrow \mathbb{D}\) with \(f(a)=b\), then look at \(g = \phi_{-b} \circ f \circ \phi_a\) where \(\phi_{-b} = (z+b)/(1+\overline{b} z)\) and \(\phi_{a} = (z-a)/(1-\overline{a} z)\) are, of course, automorphisms of the unit disc. Clearly \(g(0)=0\). Then the result follows Schwarz Lemma.</li>
@@ -173,7 +185,7 @@ for every \(n \in \mathbb{Z}\)?</p>
 
 <p>Regardless of where in the world you are, there are some extremely unpleasant people who will try making you feel bad because you didn’t already know of XYZ theorem, or you didn’t pass the exam on your first try, or you didn’t get as high of a score on it as they did, or you only passed one qual while they passed both analysis and ABC qual. Please don’t let them get to you; majority of the time, they are projecting their own insecurities by acting like a <a href="https://mathweb.ucsd.edu/~fan/teach/add.htm" rel="external nofollow noopener" target="_blank">math bully</a>.</p>
 
-<p>In conclusion, I would like to illuminate the fact that most of this advice is not unique to the analysis qualifying exam: part of becoming an “expert” in any subfield of mathematics involves familiarizing yourself with and eventually mastering the tricks of the trade.</p>
+<p>As a concluding remark, I would like to illuminate the fact that most of this advice is not unique to the analysis qualifying exam: part of becoming an “expert” in any subfield of mathematics involves familiarizing yourself with and eventually mastering the tricks of the trade. I promise this stuff gets easier with time and (perhaps exorbitant amount of) practice.</p>
 
           </article>
 
@@ -185,7 +197,7 @@ for every \(n \in \mathbb{Z}\)?</p>
     <footer class="fixed-bottom">
       <div class="container mt-0">
         © Copyright 2026 Summer  Al Hamdani. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme.
-Last updated: March 30, 2026.
+Last updated: April 03, 2026.
       </div>
     </footer>
 
