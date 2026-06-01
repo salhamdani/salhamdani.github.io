@@ -1,0 +1,213 @@
+/* ---------- Global layout ---------- */
+
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'EB Garamond', "Times New Roman", serif;
+  line-height: 1.65;
+  color: #222;
+  background: #fff;
+}
+
+/* ---------- Page container ---------- */
+
+header,
+main,
+footer {
+  max-width: 780px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+header {
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+main {
+  padding-bottom: 48px;
+}
+
+footer {
+  padding-top: 24px;
+  padding-bottom: 48px;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+}
+
+/* ---------- Typography ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  font-weight: normal;
+  color: #111;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 0 0 16px 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 36px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+h4 {
+  font-size: 1.05rem;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 18px;
+  padding-left: 28px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: #9b0000;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* ---------- Navigation ---------- */
+
+nav {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+
+nav a {
+  display: inline-block;
+  margin-right: 18px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #9b0000;
+}
+
+/* ---------- Sections and articles ---------- */
+
+section {
+  margin-bottom: 32px;
+}
+
+article {
+  margin-bottom: 28px;
+}
+
+/* ---------- MathJax display math ---------- */
+
+mjx-container[jax="CHTML"][display="true"] {
+  margin: 1.2em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Keeps long equations usable on phones */
+.MathJax,
+mjx-container {
+  max-width: 100%;
+}
+
+/* ---------- Code blocks, if needed later ---------- */
+
+pre,
+code {
+  font-family: Menlo, Consolas, Monaco, monospace;
+  font-size: 0.9rem;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 16px;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+}
+
+/* ---------- Images ---------- */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional profile image style */
+.profile-photo {
+  max-width: 180px;
+  border-radius: 4px;
+}
+
+/* ---------- Tables, if needed later ---------- */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  header {
+    padding-top: 32px;
+  }
+
+  nav a {
+    display: block;
+    margin-right: 0;
+  }
+}
