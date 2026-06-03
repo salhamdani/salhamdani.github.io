@@ -148,7 +148,7 @@ mjx-container {
   max-width: 100%;
 }
 
-/* ---------- Code blocks, if needed later ---------- */
+/* ---------- Code blocks ---------- */
 
 pre,
 code {
@@ -170,11 +170,32 @@ img {
   height: auto;
 }
 
-/* Optional profile image style */
-.profile-photo {
-  max-width: 180px;
-  border-radius: 4px;
+
+.floated-image {
+  /* Floats the entire container to the left */
+  float: right;            
+  
+  /* Adds space between the image container and the wrapping text */
+  margin: 0 15px 10px 0;  
+  
+  /* Optional: Forces the container to match the width of your image */
+  width: 250px;           
 }
+
+.floated-image img {
+  /* Ensures the image fills the container width */
+  width: 100%;            
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  padding-top: 5px;
+}
+
 
 /* ---------- Tables, if needed later ---------- */
 
@@ -211,3 +232,26 @@ th {
     margin-right: 0;
   }
 }
+
+/* ---------- Bibliography ---------- */
+
+.bibliography {
+  padding-left: 24px;
+}
+
+.bibliography li {
+  margin-bottom: 18px;
+}
+
+.bib-authors {
+  font-weight: normal;
+}
+
+.bib-title {
+  color: #111;
+}
+
+.bib-venue {
+  color: #333;
+}
+
